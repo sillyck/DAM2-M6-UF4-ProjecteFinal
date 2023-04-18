@@ -1,20 +1,19 @@
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class MenuInicial extends JFrame{
+public class MenuClients extends JFrame{
 	
-	public MenuInicial() {
+	public MenuClients() {
 		setSize(1200, 380);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JButton clients, llibres, ventes, consultar, sortir;
+		JButton alta, baixa, modificar, enrere;
 		
 		
 		
 		
 	}
-	
 
 }
