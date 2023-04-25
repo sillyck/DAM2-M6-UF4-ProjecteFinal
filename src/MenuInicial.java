@@ -2,6 +2,8 @@ import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -55,8 +57,78 @@ public class MenuInicial extends JFrame{
 		cp.add(consultar, posicioBotoConsulta);
 		cp.add(sortir, posicioBotoSortir);
 		
+	
+		clients.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				obrirPantallaClients();				
+			}
+		});
+		
+		llibres.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				obrirPantallaLlibres();				
+			}
+		});
+		
+		ventes.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				obrirPantallaVentes();
+			}
+		});
+		
+		consultar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				obrirPantallaConsultar();
+			}
+		});
+		
+		sortir.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				sortir();
+			}
+		});
 		
 	}
+	
+	public void obrirPantallaClients() {
+		MenuClients menuClients = new MenuClients();
+		menuClients.setVisible(true);
+		this.dispose();
+	}
+	
+	public void obrirPantallaLlibres() {
+		MenuLlibres menuLlibres = new MenuLlibres();
+		menuLlibres.setVisible(true);
+		this.dispose();
+	}
+	
+	public void obrirPantallaVentes() {
+		MenuVentes menuVentes = new MenuVentes();
+		menuVentes.setVisible(true);
+		this.dispose();
+	}
+	
+	public void obrirPantallaConsultar(){
+		MenuConsulta menuConsulta = new MenuConsulta();
+		menuConsulta.setVisible(true);
+		this.dispose();
+		
+	}
+	
+	public void sortir() {
+		this.dispose();
+	}
+	
+	
 	
 
 }
