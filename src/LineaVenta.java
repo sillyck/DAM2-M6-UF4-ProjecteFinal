@@ -7,11 +7,11 @@ public class LineaVenta {
         this.cantidad = cantidad;
     }
 
-    public String getNombreLibro() {
+    public String getNomLlibre() {
         return nombreLibro;
     }
 
-    public int getCantidad() {
+    public int getQuantitat() {
         return cantidad;
     }
 

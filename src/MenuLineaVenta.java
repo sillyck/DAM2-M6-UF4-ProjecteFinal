@@ -26,7 +26,7 @@ public class MenuLineaVenta extends JFrame {
 
                 LineaVenta lv = new LineaVenta(nom, quant);
                 if (lineaVentaListener != null) {
-                    lineaVentaListener.onLineaVentaAgregada(lv);
+                    lineaVentaListener.agregarLineaVenta(lv);
                 }
 
                 dispose();

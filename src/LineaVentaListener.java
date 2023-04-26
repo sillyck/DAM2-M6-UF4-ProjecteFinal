@@ -1,5 +1,5 @@
 public interface LineaVentaListener {
 
-    void onLineaVentaAgregada(LineaVenta lineaVenta);
-
+    void onLineaVentaAgregada(LineaVentaEvent evento);
+    void agregarLineaVenta(LineaVenta lineaVenta);
 }
