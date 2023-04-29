@@ -2,6 +2,8 @@ import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -47,8 +49,19 @@ public class MenuClients extends JFrame{
 		cp.add(modificar, posicioBotoModificar);
 		cp.add(enrere, posicioBotoEnrere);
 		
+		alta.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				crearAltaClient();				
+			}
+		});
 		
-		
+	}
+	
+	private void crearAltaClient() {
+		AltaClient alta = new AltaClient();
+		alta.setVisible(true);
+		this.dispose();
 	}
 
 }

@@ -97,7 +97,7 @@ public class MenuVentes extends JFrame implements LineaVentaListener {
         etiquetaFecha = new JLabel("Fecha:");
         campoCliente = new JTextField(10);
         campoFecha = new JTextField(10);
-        campoFecha.setText(java.time.LocalDate.now().toString()); // Establecer la fecha actual
+        campoFecha.setText(fechaActualString); // Establecer la fecha actual
         campoFecha.setEditable(false); // Hacer que el campo de fecha no sea editable
         panelDatosVenta1.add(etiquetaCliente);
         panelDatosVenta1.add(campoCliente);
