@@ -9,10 +9,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class AltaLlibre extends JFrame {
+public class ModificarLlibre extends JFrame {
 
 	private JLabel etiquetaTitol;
 	private JLabel etiquetaAutor;
+	private JLabel etiquetaISBNAntic;
 	private JLabel etiquetaISBN;
 	private JLabel etiquetaStock;
 	private JLabel etiquetaPVP;
@@ -23,6 +24,7 @@ public class AltaLlibre extends JFrame {
 	private JLabel etiquetaDataAlta;
 	private JTextField campTitol;
 	private JTextField campAutor;
+	private JTextField campISBNAntic;
 	private JTextField campISBN;
 	private JTextField campStock;
 	private JTextField campPVP;
@@ -34,13 +36,27 @@ public class AltaLlibre extends JFrame {
 	private JButton botoEnviar; 
 	private JButton botoTornar;
 
-	public AltaLlibre() {
+	public ModificarLlibre() {
 		super("Alta de un llibre");
 		setTitle("Alta de un llibre");
 		setSize(800, 600);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new GridBagLayout());
+		
+		etiquetaISBNAntic = new JLabel("ISBN:");
+		GridBagConstraints constraintsISBNAntic = new GridBagConstraints();
+		constraintsISBNAntic.gridx = 0;
+		constraintsISBNAntic.gridy = 0;
+		constraintsISBNAntic.insets = new Insets(10, 10, 10, 10);
+		add(etiquetaISBNAntic, constraintsISBNAntic);
+
+		campISBNAntic = new JTextField(10);
+		GridBagConstraints constraintsCampISBNAntic = new GridBagConstraints();
+		constraintsCampISBNAntic.gridx = 1;
+		constraintsCampISBNAntic.gridy = 0;
+		constraintsCampISBNAntic.insets = new Insets(10, 10, 10, 0);
+		add(campISBNAntic, constraintsCampISBNAntic);
 		
 		etiquetaISBN = new JLabel("ISBN:");
 		GridBagConstraints constraintsISBN = new GridBagConstraints();
@@ -57,18 +73,18 @@ public class AltaLlibre extends JFrame {
 		add(campISBN, constraintsCampISBN);
 
 		etiquetaTitol = new JLabel("Titol:");
-		GridBagConstraints constraintsTitol = new GridBagConstraints();
-		constraintsTitol.gridx = 0;
-		constraintsTitol.gridy = 1;
-		constraintsTitol.insets = new Insets(10, 10, 10, 10);
-		add(etiquetaTitol, constraintsTitol);
+		GridBagConstraints constraintsNom = new GridBagConstraints();
+		constraintsNom.gridx = 0;
+		constraintsNom.gridy = 1;
+		constraintsNom.insets = new Insets(10, 10, 10, 10);
+		add(etiquetaTitol, constraintsNom);
 
 		campTitol = new JTextField(10);
-		GridBagConstraints constraintsCampTitol = new GridBagConstraints();
-		constraintsCampTitol.gridx = 1;
-		constraintsCampTitol.gridy = 1;
-		constraintsCampTitol.insets = new Insets(10, 10, 10, 10);
-		add(campTitol, constraintsCampTitol);
+		GridBagConstraints constraintsCampNom = new GridBagConstraints();
+		constraintsCampNom.gridx = 1;
+		constraintsCampNom.gridy = 1;
+		constraintsCampNom.insets = new Insets(10, 10, 10, 10);
+		add(campTitol, constraintsCampNom);
 
 		etiquetaAutor = new JLabel("Autor:");
 		GridBagConstraints constraintsCognom = new GridBagConstraints();

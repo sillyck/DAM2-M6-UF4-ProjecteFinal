@@ -2,26 +2,28 @@ import java.awt.Container;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class MenuLlibres extends JFrame{
-	
+public class MenuLlibres extends JFrame {
+
 	public MenuLlibres() {
 		setSize(1200, 380);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		JButton alta = new JButton("Alta");
 		JButton baixa = new JButton("Baixa");
 		JButton modificar = new JButton("Modificació");
 		JButton enrere = new JButton("Enrere");
-		
+
 		Container cp = getContentPane();
 		cp.setLayout(new GridBagLayout());
-		
+
 		GridBagConstraints posicioBotoAlta = new GridBagConstraints();
 		posicioBotoAlta.gridx = 0;
 		posicioBotoAlta.gridy = 0;
@@ -46,6 +48,35 @@ public class MenuLlibres extends JFrame{
 		cp.add(baixa, posicioBotoBaixa);
 		cp.add(modificar, posicioBotoModificar);
 		cp.add(enrere, posicioBotoEnrere);
+
+		alta.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				alta();
+			}
+		});
+
+		baixa.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				baixa();
+			}
+		});
+
+	}
+
+	private void alta() {
+		AltaLlibre alta = new AltaLlibre();
+		alta.setVisible(true);
+		this.dispose();
+	}
+
+	private void baixa() {
+		BaixaLlibre baixa = new BaixaLlibre();
+		baixa.setVisible(true);
+		this.dispose();
 	}
 
 }
