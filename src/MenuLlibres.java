@@ -64,6 +64,14 @@ public class MenuLlibres extends JFrame {
 				baixa();
 			}
 		});
+		
+		modificar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				modificacio();
+			}
+		});
 
 	}
 
@@ -76,6 +84,12 @@ public class MenuLlibres extends JFrame {
 	private void baixa() {
 		BaixaLlibre baixa = new BaixaLlibre();
 		baixa.setVisible(true);
+		this.dispose();
+	}
+	
+	private void modificacio() {
+		ModificarLlibre modificar = new ModificarLlibre();
+		modificar.setVisible(true);
 		this.dispose();
 	}
 

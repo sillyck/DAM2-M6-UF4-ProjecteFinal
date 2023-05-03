@@ -44,7 +44,7 @@ public class ModificarLlibre extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new GridBagLayout());
 		
-		etiquetaISBNAntic = new JLabel("ISBN:");
+		etiquetaISBNAntic = new JLabel("ISBN antic:");
 		GridBagConstraints constraintsISBNAntic = new GridBagConstraints();
 		constraintsISBNAntic.gridx = 0;
 		constraintsISBNAntic.gridy = 0;
@@ -61,154 +61,154 @@ public class ModificarLlibre extends JFrame {
 		etiquetaISBN = new JLabel("ISBN:");
 		GridBagConstraints constraintsISBN = new GridBagConstraints();
 		constraintsISBN.gridx = 0;
-		constraintsISBN.gridy = 0;
+		constraintsISBN.gridy = 1;
 		constraintsISBN.insets = new Insets(10, 10, 10, 10);
 		add(etiquetaISBN, constraintsISBN);
 
 		campISBN = new JTextField(10);
 		GridBagConstraints constraintsCampISBN = new GridBagConstraints();
 		constraintsCampISBN.gridx = 1;
-		constraintsCampISBN.gridy = 0;
+		constraintsCampISBN.gridy = 1;
 		constraintsCampISBN.insets = new Insets(10, 10, 10, 0);
 		add(campISBN, constraintsCampISBN);
 
 		etiquetaTitol = new JLabel("Titol:");
-		GridBagConstraints constraintsNom = new GridBagConstraints();
-		constraintsNom.gridx = 0;
-		constraintsNom.gridy = 1;
-		constraintsNom.insets = new Insets(10, 10, 10, 10);
-		add(etiquetaTitol, constraintsNom);
+		GridBagConstraints constraintsTitol = new GridBagConstraints();
+		constraintsTitol.gridx = 0;
+		constraintsTitol.gridy = 2;
+		constraintsTitol.insets = new Insets(10, 10, 10, 10);
+		add(etiquetaTitol, constraintsTitol);
 
 		campTitol = new JTextField(10);
-		GridBagConstraints constraintsCampNom = new GridBagConstraints();
-		constraintsCampNom.gridx = 1;
-		constraintsCampNom.gridy = 1;
-		constraintsCampNom.insets = new Insets(10, 10, 10, 10);
-		add(campTitol, constraintsCampNom);
+		GridBagConstraints constraintsCampTitol = new GridBagConstraints();
+		constraintsCampTitol.gridx = 1;
+		constraintsCampTitol.gridy = 2;
+		constraintsCampTitol.insets = new Insets(10, 10, 10, 10);
+		add(campTitol, constraintsCampTitol);
 
 		etiquetaAutor = new JLabel("Autor:");
-		GridBagConstraints constraintsCognom = new GridBagConstraints();
-		constraintsCognom.gridx = 0;
-		constraintsCognom.gridy = 2;
-		constraintsCognom.insets = new Insets(10, 10, 10, 10);
-		add(etiquetaAutor, constraintsCognom);
+		GridBagConstraints constraintsAutor = new GridBagConstraints();
+		constraintsAutor.gridx = 0;
+		constraintsAutor.gridy = 3;
+		constraintsAutor.insets = new Insets(10, 10, 10, 10);
+		add(etiquetaAutor, constraintsAutor);
 
 		campAutor = new JTextField(10);
-		GridBagConstraints constraintsCampCognom = new GridBagConstraints();
-		constraintsCampCognom.gridx = 1;
-		constraintsCampCognom.gridy = 2;
-		constraintsCampCognom.insets = new Insets(10, 10, 10, 10);
-		add(campAutor, constraintsCampCognom);
+		GridBagConstraints constraintsCampAutor = new GridBagConstraints();
+		constraintsCampAutor.gridx = 1;
+		constraintsCampAutor.gridy = 3;
+		constraintsCampAutor.insets = new Insets(10, 10, 10, 10);
+		add(campAutor, constraintsCampAutor);
 		
 		etiquetaStock = new JLabel("Stock:");
-		GridBagConstraints constraintsDireccio = new GridBagConstraints();
-		constraintsDireccio.gridx = 0;
-		constraintsDireccio.gridy = 3;
-		constraintsDireccio.insets = new Insets(10, 10, 10, 10);
-		add(etiquetaStock, constraintsDireccio);
+		GridBagConstraints constraintsStock = new GridBagConstraints();
+		constraintsStock.gridx = 0;
+		constraintsStock.gridy = 4;
+		constraintsStock.insets = new Insets(10, 10, 10, 10);
+		add(etiquetaStock, constraintsStock);
 
 		campStock = new JTextField(10);
-		GridBagConstraints constraintsCampDireccio = new GridBagConstraints();
-		constraintsCampDireccio.gridx = 1;
-		constraintsCampDireccio.gridy = 3;
-		constraintsCampDireccio.insets = new Insets(10, 10, 10, 10);
-		add(campStock, constraintsCampDireccio);
+		GridBagConstraints constraintsCampStock = new GridBagConstraints();
+		constraintsCampStock.gridx = 1;
+		constraintsCampStock.gridy = 4;
+		constraintsCampStock.insets = new Insets(10, 10, 10, 10);
+		add(campStock, constraintsCampStock);
 		
 		etiquetaPVP = new JLabel("PVP:");
 		GridBagConstraints constraintsPVP = new GridBagConstraints();
 		constraintsPVP.gridx = 0;
-		constraintsPVP.gridy = 4;
+		constraintsPVP.gridy = 5;
 		constraintsPVP.insets = new Insets(10, 10, 10, 10);
 		add(etiquetaPVP, constraintsPVP);
 
 		campPVP = new JTextField(10);
 		GridBagConstraints constraintsCampPVP = new GridBagConstraints();
 		constraintsCampPVP.gridx = 1;
-		constraintsCampPVP.gridy = 4;
+		constraintsCampPVP.gridy = 5;
 		constraintsCampPVP.insets = new Insets(10, 10, 10, 10);
 		add(campPVP, constraintsCampPVP);
 		
 		etiquetaDataPublicacio = new JLabel("Data publicació:");
 		GridBagConstraints constraintsDataPublicacio = new GridBagConstraints();
 		constraintsDataPublicacio.gridx = 0;
-		constraintsDataPublicacio.gridy = 5;
+		constraintsDataPublicacio.gridy = 6;
 		constraintsDataPublicacio.insets = new Insets(10, 10, 10, 10);
 		add(etiquetaDataPublicacio, constraintsDataPublicacio);
 
 		campDataPublicacio = new JTextField(10);
 		GridBagConstraints constraintsCampDataPublicacio = new GridBagConstraints();
 		constraintsCampDataPublicacio.gridx = 1;
-		constraintsCampDataPublicacio.gridy = 5;
+		constraintsCampDataPublicacio.gridy = 6;
 		constraintsCampDataPublicacio.insets = new Insets(10, 10, 10, 10);
 		add(campDataPublicacio, constraintsCampDataPublicacio);
 
 		etiquetaEditorial = new JLabel("Editorial:");
 		GridBagConstraints constraintsEditorial = new GridBagConstraints();
 		constraintsEditorial.gridx = 0;
-		constraintsEditorial.gridy = 6;
+		constraintsEditorial.gridy = 7;
 		constraintsEditorial.insets = new Insets(10, 10, 10, 10);
 		add(etiquetaEditorial, constraintsEditorial);
 
 		campEditorial = new JTextField(10);
 		GridBagConstraints constraintsCampEditorial = new GridBagConstraints();
 		constraintsCampEditorial.gridx = 1;
-		constraintsCampEditorial.gridy = 6;
+		constraintsCampEditorial.gridy = 7;
 		constraintsCampEditorial.insets = new Insets(10, 10, 10, 10);
 		add(campEditorial, constraintsCampEditorial);
 		
 		etiquetaTematica = new JLabel("Tematica:");
 		GridBagConstraints constraintsTematica = new GridBagConstraints();
 		constraintsTematica.gridx = 0;
-		constraintsTematica.gridy = 7;
+		constraintsTematica.gridy = 8;
 		constraintsTematica.insets = new Insets(10, 10, 10, 10);
 		add(etiquetaTematica, constraintsTematica);
 
 		campTematica = new JTextField(10);
 		GridBagConstraints constraintsCampTematica = new GridBagConstraints();
 		constraintsCampTematica.gridx = 1;
-		constraintsCampTematica.gridy = 7;
+		constraintsCampTematica.gridy = 8;
 		constraintsCampTematica.insets = new Insets(10, 10, 10, 10);
 		add(campTematica, constraintsCampTematica);
 		
 		etiquetaUbicacio = new JLabel("Ubicació:");
 		GridBagConstraints constraintsUbicacio = new GridBagConstraints();
 		constraintsUbicacio.gridx = 0;
-		constraintsUbicacio.gridy = 8;
+		constraintsUbicacio.gridy = 9;
 		constraintsUbicacio.insets = new Insets(10, 10, 10, 10);
 		add(etiquetaUbicacio, constraintsUbicacio);
 
 		campUbicacio = new JTextField(10);
 		GridBagConstraints constraintsCampUbicacio = new GridBagConstraints();
 		constraintsCampUbicacio.gridx = 1;
-		constraintsCampUbicacio.gridy = 8;
+		constraintsCampUbicacio.gridy = 9;
 		constraintsCampUbicacio.insets = new Insets(10, 10, 10, 10);
 		add(campUbicacio, constraintsCampUbicacio);
 		
 		etiquetaDataAlta = new JLabel("Data alta:");
 		GridBagConstraints constraintsDataAlta = new GridBagConstraints();
 		constraintsDataAlta.gridx = 0;
-		constraintsDataAlta.gridy = 9;
+		constraintsDataAlta.gridy = 10;
 		constraintsDataAlta.insets = new Insets(10, 10, 10, 10);
 		add(etiquetaDataAlta, constraintsDataAlta);
 
 		campDataAlta = new JTextField(10);
 		GridBagConstraints constraintsCampDataAlta = new GridBagConstraints();
 		constraintsCampDataAlta.gridx = 1;
-		constraintsCampDataAlta.gridy = 9;
+		constraintsCampDataAlta.gridy = 10;
 		constraintsCampDataAlta.insets = new Insets(10, 10, 10, 10);
 		add(campDataAlta, constraintsCampDataAlta);
 		
 		botoEnviar = new JButton("Enviar");
 		GridBagConstraints constraintsBotoEnviar = new GridBagConstraints();
 		constraintsBotoEnviar.gridx = 0;
-		constraintsBotoEnviar.gridy = 10;
+		constraintsBotoEnviar.gridy = 11;
 		constraintsBotoEnviar.insets = new Insets(10, 10, 10, 10);
 		add(botoEnviar, constraintsBotoEnviar);
 
 		botoTornar = new JButton("Tornar");
 		GridBagConstraints constraintsBotoTornar = new GridBagConstraints();
 		constraintsBotoTornar.gridx = 1;
-		constraintsBotoTornar.gridy = 10;
+		constraintsBotoTornar.gridy = 11;
 		constraintsBotoTornar.insets = new Insets(10, 10, 10, 10);
 		add(botoTornar, constraintsBotoTornar);
 
