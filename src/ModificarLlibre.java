@@ -221,7 +221,6 @@ public class ModificarLlibre extends JFrame {
 				tornar();
 			}
 		});
-		
 	}
 	
 	private void tornar() {
