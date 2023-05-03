@@ -73,6 +73,14 @@ public class MenuConsulta extends JFrame {
 				obrirConsultaVentes();				
 			}
 		});
+		
+		enrere.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				enrere();				
+			}
+		});
 
 	}
 
@@ -91,6 +99,12 @@ public class MenuConsulta extends JFrame {
 	private void obrirConsultaVentes() {
 		ConsultaVentes consultaVentes = new ConsultaVentes();
 		consultaVentes.setVisible(true);
+		this.dispose();
+	}
+	
+	private void enrere() {
+		MenuInicial inici = new MenuInicial();
+		inici.setVisible(true);
 		this.dispose();
 	}
 
