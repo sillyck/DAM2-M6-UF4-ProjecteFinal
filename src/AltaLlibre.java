@@ -9,33 +9,44 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class AltaClient extends JFrame {
+public class AltaLlibre extends JFrame {
 
-	private JLabel etiquetaNom;
-	private JLabel etiquetaCognom;
-	private JLabel etiquetaDNI;
-	private JLabel etiquetaDireccio;
+	private JLabel etiquetaTitol;
+	private JLabel etiquetaAutor;
+	private JLabel etiquetaISBN;
+	private JLabel etiquetaStock;
+	private JLabel etiquetaPVP;
+	private JLabel etiquetaDataPublicacio;
+	private JLabel etiquetaEditorial;
+	private JLabel etiquetaTematica;
+	private JLabel etiquetaUbicació;
+	private JLabel etiquetaDataAlta;
 	private JTextField campNom;
 	private JTextField campCognom;
 	private JTextField campDNI;
 	private JTextField campDireccio;
+	private JTextField campPVP;
+	private JTextField campDataPublicacio;
+	private JTextField campEditorial;
+	private JTextField campTematica;
+	private JTextField campUbicacio;
 	private JButton botoEnviar;
 	private JButton botoTornar;
 
-	public AltaClient() {
-		super("Alta de un client");
+	public AltaLlibre() {
+		super("Alta de un llibre");
 		setTitle("Nou Menu");
 		setSize(800, 300);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new GridBagLayout());
 		
-		etiquetaDNI = new JLabel("DNI:");
-		GridBagConstraints constraintsDni = new GridBagConstraints();
-		constraintsDni.gridx = 0;
-		constraintsDni.gridy = 0;
-		constraintsDni.insets = new Insets(10, 10, 10, 10);
-		add(etiquetaDNI, constraintsDni);
+		etiquetaISBN = new JLabel("DNI:");
+		GridBagConstraints constraintsISBN = new GridBagConstraints();
+		constraintsISBN.gridx = 0;
+		constraintsISBN.gridy = 0;
+		constraintsISBN.insets = new Insets(10, 10, 10, 10);
+		add(etiquetaISBN, constraintsISBN);
 
 		campDNI = new JTextField(10);
 		GridBagConstraints constraintsCampDNI = new GridBagConstraints();
@@ -44,12 +55,12 @@ public class AltaClient extends JFrame {
 		constraintsCampDNI.insets = new Insets(10, 10, 10, 0);
 		add(campDNI, constraintsCampDNI);
 
-		etiquetaNom = new JLabel("Nom:");
+		etiquetaTitol = new JLabel("Nom:");
 		GridBagConstraints constraintsNom = new GridBagConstraints();
 		constraintsNom.gridx = 0;
 		constraintsNom.gridy = 1;
 		constraintsNom.insets = new Insets(10, 10, 10, 10);
-		add(etiquetaNom, constraintsNom);
+		add(etiquetaTitol, constraintsNom);
 
 		campNom = new JTextField(10);
 		GridBagConstraints constraintsCampNom = new GridBagConstraints();
@@ -58,30 +69,30 @@ public class AltaClient extends JFrame {
 		constraintsCampNom.insets = new Insets(10, 10, 10, 10);
 		add(campNom, constraintsCampNom);
 
-		etiquetaCognom = new JLabel("Cognom:");
+		etiquetaAutor = new JLabel("Cognom:");
 		GridBagConstraints constraintsCognom = new GridBagConstraints();
 		constraintsCognom.gridx = 0;
 		constraintsCognom.gridy = 2;
 		constraintsCognom.insets = new Insets(10, 10, 10, 10);
-		add(etiquetaCognom, constraintsCognom);
+		add(etiquetaAutor, constraintsCognom);
 
 		campCognom = new JTextField(10);
 		GridBagConstraints constraintsCampCognom = new GridBagConstraints();
-		constraintsCampCognom.gridx = 1;
+		constraintsCampCognom.gridx = 2;
 		constraintsCampCognom.gridy = 2;
 		constraintsCampCognom.insets = new Insets(10, 10, 10, 10);
 		add(campCognom, constraintsCampCognom);
 		
-		etiquetaDireccio = new JLabel("Direcció:");
+		etiquetaStock = new JLabel("Direcció:");
 		GridBagConstraints constraintsDireccio = new GridBagConstraints();
 		constraintsDireccio.gridx = 0;
 		constraintsDireccio.gridy = 3;
 		constraintsDireccio.insets = new Insets(10, 10, 10, 10);
-		add(etiquetaDireccio, constraintsDireccio);
+		add(etiquetaStock, constraintsDireccio);
 
 		campDireccio = new JTextField(10);
 		GridBagConstraints constraintsCampDireccio = new GridBagConstraints();
-		constraintsCampDireccio.gridx = 1;
+		constraintsCampDireccio.gridx = 3;
 		constraintsCampDireccio.gridy = 3;
 		constraintsCampDireccio.insets = new Insets(10, 10, 10, 10);
 		add(campDireccio, constraintsCampDireccio);

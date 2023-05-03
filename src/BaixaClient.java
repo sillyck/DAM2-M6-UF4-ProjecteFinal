@@ -9,21 +9,15 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class AltaClient extends JFrame {
+public class BaixaClient extends JFrame {
 
-	private JLabel etiquetaNom;
-	private JLabel etiquetaCognom;
 	private JLabel etiquetaDNI;
-	private JLabel etiquetaDireccio;
-	private JTextField campNom;
-	private JTextField campCognom;
 	private JTextField campDNI;
-	private JTextField campDireccio;
 	private JButton botoEnviar;
 	private JButton botoTornar;
 
-	public AltaClient() {
-		super("Alta de un client");
+	public BaixaClient() {
+		super("Baixa de un client");
 		setTitle("Nou Menu");
 		setSize(800, 300);
 		setLocationRelativeTo(null);
@@ -43,48 +37,6 @@ public class AltaClient extends JFrame {
 		constraintsCampDNI.gridy = 0;
 		constraintsCampDNI.insets = new Insets(10, 10, 10, 0);
 		add(campDNI, constraintsCampDNI);
-
-		etiquetaNom = new JLabel("Nom:");
-		GridBagConstraints constraintsNom = new GridBagConstraints();
-		constraintsNom.gridx = 0;
-		constraintsNom.gridy = 1;
-		constraintsNom.insets = new Insets(10, 10, 10, 10);
-		add(etiquetaNom, constraintsNom);
-
-		campNom = new JTextField(10);
-		GridBagConstraints constraintsCampNom = new GridBagConstraints();
-		constraintsCampNom.gridx = 1;
-		constraintsCampNom.gridy = 1;
-		constraintsCampNom.insets = new Insets(10, 10, 10, 10);
-		add(campNom, constraintsCampNom);
-
-		etiquetaCognom = new JLabel("Cognom:");
-		GridBagConstraints constraintsCognom = new GridBagConstraints();
-		constraintsCognom.gridx = 0;
-		constraintsCognom.gridy = 2;
-		constraintsCognom.insets = new Insets(10, 10, 10, 10);
-		add(etiquetaCognom, constraintsCognom);
-
-		campCognom = new JTextField(10);
-		GridBagConstraints constraintsCampCognom = new GridBagConstraints();
-		constraintsCampCognom.gridx = 1;
-		constraintsCampCognom.gridy = 2;
-		constraintsCampCognom.insets = new Insets(10, 10, 10, 10);
-		add(campCognom, constraintsCampCognom);
-		
-		etiquetaDireccio = new JLabel("Direcció:");
-		GridBagConstraints constraintsDireccio = new GridBagConstraints();
-		constraintsDireccio.gridx = 0;
-		constraintsDireccio.gridy = 3;
-		constraintsDireccio.insets = new Insets(10, 10, 10, 10);
-		add(etiquetaDireccio, constraintsDireccio);
-
-		campDireccio = new JTextField(10);
-		GridBagConstraints constraintsCampDireccio = new GridBagConstraints();
-		constraintsCampDireccio.gridx = 1;
-		constraintsCampDireccio.gridy = 3;
-		constraintsCampDireccio.insets = new Insets(10, 10, 10, 10);
-		add(campDireccio, constraintsCampDireccio);
 
 		botoEnviar = new JButton("Enviar");
 		GridBagConstraints constraintsBotoEnviar = new GridBagConstraints();

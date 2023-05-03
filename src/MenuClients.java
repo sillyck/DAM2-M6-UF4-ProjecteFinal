@@ -56,6 +56,27 @@ public class MenuClients extends JFrame{
 			}
 		});
 		
+		baixa.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				crearBaixaClient();				
+			}
+		});
+		
+		modificar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				modificarClient();				
+			}
+		});
+		
+		enrere.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				tornar();				
+			}
+		});
+		
 	}
 	
 	private void crearAltaClient() {
@@ -63,5 +84,26 @@ public class MenuClients extends JFrame{
 		alta.setVisible(true);
 		this.dispose();
 	}
+	
+	private void crearBaixaClient() {
+		BaixaClient baixa = new BaixaClient();
+		baixa.setVisible(true);
+		this.dispose();
+	}
+	
+	private void modificarClient() {
+		ModificarClient modificar = new ModificarClient();
+		modificar.setVisible(true);
+		this.dispose();
+	}
+	
+	private void tornar() {
+		MenuInicial inici = new MenuInicial();
+		inici.setVisible(true);
+		this.dispose();
+	}
+	
+	
+	
 
 }
