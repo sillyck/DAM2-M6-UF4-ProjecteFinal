@@ -71,7 +71,6 @@ public class BaixaLlibre extends JFrame {
 				try {
 					enviar();
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}				
 			}
@@ -89,6 +88,7 @@ public class BaixaLlibre extends JFrame {
 		Llibreria llibreria = new Llibreria();
 		
 		llibreria.eliminarLlibre(Integer.parseInt(campISBN.getText()));
+		tornar();
 	}
 	
 

@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import llibreriapkg.*;
 
 public class ModificarLlibre extends JFrame {
 
@@ -221,12 +222,35 @@ public class ModificarLlibre extends JFrame {
 				tornar();
 			}
 		});
+		botoEnviar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					enviar();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}				
+			}
+		});
+		
 	}
 	
 	private void tornar() {
-		MenuClients menuClients = new MenuClients();
-		menuClients.setVisible(true);
+		MenuLlibres menuLlibres = new MenuLlibres();
+		menuLlibres.setVisible(true);
 		this.dispose();
+	}
+	
+	private void enviar() throws NumberFormatException, Exception {
+		Llibreria llibreria = new Llibreria();
+		llibreria.actualitzarLlibre(Integer.parseInt(campISBNAntic.getText()), Integer.parseInt(campISBN.getText()), Integer.parseInt(campStock.getText()),
+				Integer.parseInt(campDataPublicacio.getText()), campDataAlta.getText(), campTitol.getText(), campAutor.getText(), campEditorial.getText(),
+				campTematica.getText(), campUbicacio.getText(), Double.parseDouble(campPVP.getText()));
+		
+		tornar();
+		
 	}
 	
 	
