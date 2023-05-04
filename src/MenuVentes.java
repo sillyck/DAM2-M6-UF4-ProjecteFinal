@@ -15,9 +15,15 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+import llibreriapkg.*;
+
 public class MenuVentes extends JFrame implements LineaVentaListener {
 
-    private ArrayList<LineaVenta> listaLineasVenta;
+    private ArrayList<LineaVenta> listaLineasVenta = new ArrayList<LineaVenta>();
+    private ArrayList<Linea> arrayLinea = new ArrayList<Linea>();;
+    private Llibreria llibreria = new  Llibreria();
+    private Linea linea = new Linea();
+    private Libro libro = new Libro();
     private JTable tablaVentas;
     private DefaultTableModel modeloTablaVentas;
     private JLabel etiquetaCliente;
@@ -29,10 +35,12 @@ public class MenuVentes extends JFrame implements LineaVentaListener {
     private JButton enviar;
     private JButton enrere;
     private MenuLineaVenta menuLineaVenta;
+    private double total = 0;
     
 
     public MenuVentes() {
         listaLineasVenta = new ArrayList<LineaVenta>();
+        
         setTitle("Menu de Ventas");
         setSize(600, 400);
         setLocationRelativeTo(null);
@@ -79,8 +87,16 @@ public class MenuVentes extends JFrame implements LineaVentaListener {
         JPanel panelBotones = new JPanel();
         enviar = new JButton("Enviar");
         enviar.addActionListener(e -> {
-            // Código para enviar la venta a un servidor o guardarla en una base de datos
-            // ...
+            
+        	Llibreria llibreria = new Llibreria();
+        	try {
+        		Vendes venda = new Vendes(fechaActualString, campoCliente.getText().toString(), arrayLinea, total);
+				llibreria.afegirVenta(venda);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+        	
             dispose(); // Cerrar la ventana después de enviar la venta
         });
         enrere = new JButton("Enrere");
@@ -100,9 +116,14 @@ public class MenuVentes extends JFrame implements LineaVentaListener {
 
     // Método para agregar una línea de venta a la lista y actualizar la tabla y el total
     public void agregarLineaVenta(LineaVenta lineaVenta) throws Exception {
+    	libro = llibreria.retornarLlibre(lineaVenta.getIsbLlibre()).getFirst();
+    	linea.setLibro(libro);
+    	linea.setCantidad(lineaVenta.getQuantitat());
+    	linea.setTotal(lineaVenta.getTotal());
+    	arrayLinea.add(linea);
         listaLineasVenta.add(lineaVenta);
         modeloTablaVentas.addRow(new Object[]{lineaVenta.getIsbLlibre(), lineaVenta.getQuantitat(), lineaVenta.getTotal()});
-        double total = 0;
+        
         for (LineaVenta lv : listaLineasVenta) {
             total += lv.getTotal();
         }
@@ -122,6 +143,3 @@ public class MenuVentes extends JFrame implements LineaVentaListener {
 	}
     
 }
-
-
-       

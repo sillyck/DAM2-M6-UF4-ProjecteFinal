@@ -1,4 +1,5 @@
 import llibreriapkg.*;
+import llibreriapkg.Libro;
 
 public class LineaVenta {
     private int isbLlibre;

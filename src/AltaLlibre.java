@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import llibreriapkg.*;
 
 public class AltaLlibre extends JFrame {
 
@@ -31,7 +32,7 @@ public class AltaLlibre extends JFrame {
 	private JTextField campTematica;
 	private JTextField campUbicacio;
 	private JTextField campDataAlta;
-	private JButton botoEnviar; 
+	private JButton botoEnviar;
 	private JButton botoTornar;
 
 	public AltaLlibre() {
@@ -41,7 +42,7 @@ public class AltaLlibre extends JFrame {
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new GridBagLayout());
-		
+
 		etiquetaISBN = new JLabel("ISBN:");
 		GridBagConstraints constraintsISBN = new GridBagConstraints();
 		constraintsISBN.gridx = 0;
@@ -83,7 +84,7 @@ public class AltaLlibre extends JFrame {
 		constraintsCampCognom.gridy = 2;
 		constraintsCampCognom.insets = new Insets(10, 10, 10, 10);
 		add(campAutor, constraintsCampCognom);
-		
+
 		etiquetaStock = new JLabel("Stock:");
 		GridBagConstraints constraintsDireccio = new GridBagConstraints();
 		constraintsDireccio.gridx = 0;
@@ -97,7 +98,7 @@ public class AltaLlibre extends JFrame {
 		constraintsCampDireccio.gridy = 3;
 		constraintsCampDireccio.insets = new Insets(10, 10, 10, 10);
 		add(campStock, constraintsCampDireccio);
-		
+
 		etiquetaPVP = new JLabel("PVP:");
 		GridBagConstraints constraintsPVP = new GridBagConstraints();
 		constraintsPVP.gridx = 0;
@@ -111,7 +112,7 @@ public class AltaLlibre extends JFrame {
 		constraintsCampPVP.gridy = 4;
 		constraintsCampPVP.insets = new Insets(10, 10, 10, 10);
 		add(campPVP, constraintsCampPVP);
-		
+
 		etiquetaDataPublicacio = new JLabel("Data publicació:");
 		GridBagConstraints constraintsDataPublicacio = new GridBagConstraints();
 		constraintsDataPublicacio.gridx = 0;
@@ -139,7 +140,7 @@ public class AltaLlibre extends JFrame {
 		constraintsCampEditorial.gridy = 6;
 		constraintsCampEditorial.insets = new Insets(10, 10, 10, 10);
 		add(campEditorial, constraintsCampEditorial);
-		
+
 		etiquetaTematica = new JLabel("Tematica:");
 		GridBagConstraints constraintsTematica = new GridBagConstraints();
 		constraintsTematica.gridx = 0;
@@ -153,7 +154,7 @@ public class AltaLlibre extends JFrame {
 		constraintsCampTematica.gridy = 7;
 		constraintsCampTematica.insets = new Insets(10, 10, 10, 10);
 		add(campTematica, constraintsCampTematica);
-		
+
 		etiquetaUbicacio = new JLabel("Ubicació:");
 		GridBagConstraints constraintsUbicacio = new GridBagConstraints();
 		constraintsUbicacio.gridx = 0;
@@ -167,7 +168,7 @@ public class AltaLlibre extends JFrame {
 		constraintsCampUbicacio.gridy = 8;
 		constraintsCampUbicacio.insets = new Insets(10, 10, 10, 10);
 		add(campUbicacio, constraintsCampUbicacio);
-		
+
 		etiquetaDataAlta = new JLabel("Data alta:");
 		GridBagConstraints constraintsDataAlta = new GridBagConstraints();
 		constraintsDataAlta.gridx = 0;
@@ -181,7 +182,7 @@ public class AltaLlibre extends JFrame {
 		constraintsCampDataAlta.gridy = 9;
 		constraintsCampDataAlta.insets = new Insets(10, 10, 10, 10);
 		add(campDataAlta, constraintsCampDataAlta);
-		
+
 		botoEnviar = new JButton("Enviar");
 		GridBagConstraints constraintsBotoEnviar = new GridBagConstraints();
 		constraintsBotoEnviar.gridx = 0;
@@ -199,21 +200,50 @@ public class AltaLlibre extends JFrame {
 		setVisible(true);
 
 		botoTornar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				tornar();
 			}
 		});
-		
+		botoEnviar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				enviar();				
+			}
+		});
+
 	}
-	
+
 	private void tornar() {
 		MenuClients menuClients = new MenuClients();
 		menuClients.setVisible(true);
 		this.dispose();
 	}
-	
-	
+
+	private void enviar() {
+		Llibreria llibreria = new Llibreria();
+		Libro libro = new Libro();
+		try {
+			libro.setAny(Integer.parseInt(campDataPublicacio.getText()));
+			libro.setAutor(campAutor.getText());
+			libro.setDataAlta(campDataAlta.getText());
+			libro.setEditorial(campEditorial.getText());
+			libro.setIsbn(Integer.parseInt(campISBN.getText()));
+			libro.setPreu(Double.parseDouble(campPVP.getText()));
+			libro.setStock(Integer.parseInt(campStock.getText()));
+			libro.setTematica(campTematica.getText());
+			libro.setTitol(campTitol.getText());
+			libro.setUbicacio(campUbicacio.getText());
+			llibreria.afegirLlibre(libro);
+			tornar();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 
 }

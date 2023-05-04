@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import llibreriapkg.*;
 
 public class ModificarClient extends JFrame {
 
@@ -126,6 +127,14 @@ public class ModificarClient extends JFrame {
 			}
 		});
 		
+		botoEnviar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+enviar();				
+			}
+		});
+		
 	}
 	
 	private void tornar() {
@@ -134,6 +143,18 @@ public class ModificarClient extends JFrame {
 		this.dispose();
 	}
 	
+	private void enviar() {
+		Llibreria llibreria = new Llibreria();
+		
+		try {
+			llibreria.actualitzarClient(campDNIAntic.getText(), campDNI.getText(), campNom.getText()
+					, campCognom.getText(), campDireccio.getText());
+			tornar();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 
 }

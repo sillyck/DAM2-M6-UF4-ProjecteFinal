@@ -8,6 +8,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import llibreriapkg.*;
+
 
 public class BaixaLlibre extends JFrame {
 
@@ -62,6 +64,19 @@ public class BaixaLlibre extends JFrame {
 			}
 		});
 		
+		botoEnviar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					enviar();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}				
+			}
+		});
+		
 	}
 	
 	private void tornar() {
@@ -70,6 +85,11 @@ public class BaixaLlibre extends JFrame {
 		this.dispose();
 	}
 	
+	private void enviar() throws NumberFormatException, Exception {
+		Llibreria llibreria = new Llibreria();
+		
+		llibreria.eliminarLlibre(Integer.parseInt(campISBN.getText()));
+	}
 	
 
 }

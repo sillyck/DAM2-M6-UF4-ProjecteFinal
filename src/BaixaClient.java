@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import llibreriapkg.*;
 
 public class BaixaClient extends JFrame {
 
@@ -23,7 +24,7 @@ public class BaixaClient extends JFrame {
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new GridBagLayout());
-		
+
 		etiquetaDNI = new JLabel("DNI:");
 		GridBagConstraints constraintsDni = new GridBagConstraints();
 		constraintsDni.gridx = 0;
@@ -55,21 +56,42 @@ public class BaixaClient extends JFrame {
 		setVisible(true);
 
 		botoTornar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				tornar();
 			}
 		});
-		
+
+		botoEnviar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				enviar();
+			}
+		});
+
 	}
-	
+
 	private void tornar() {
 		MenuClients menuClients = new MenuClients();
 		menuClients.setVisible(true);
 		this.dispose();
 	}
-	
-	
+
+	// 333333333L
+	private void enviar() {
+		Llibreria llibreria = new Llibreria();
+
+		try {
+			llibreria.eliminarClient(campDNI.getText());
+			tornar();
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 
 }

@@ -3,16 +3,19 @@ import java.util.Date;
 
 public class Venta {
     private String nombreCliente;
-    private Date fecha;
+    private String fecha;
     private ArrayList<LineaVenta> lineasVenta;
 
-    public Venta(String nombreCliente) {
-        this.nombreCliente = nombreCliente;
-        this.fecha = new Date();
-        this.lineasVenta = new ArrayList<>();
-    }
 
-    public void agregarLineaVenta(LineaVenta lineaVenta) {
+
+    public Venta(String nombreCliente, String fecha, ArrayList<LineaVenta> lineasVenta) {
+		super();
+		this.nombreCliente = nombreCliente;
+		this.fecha = fecha;
+		this.lineasVenta = lineasVenta;
+	}
+
+	public void agregarLineaVenta(LineaVenta lineaVenta) {
         lineasVenta.add(lineaVenta);
     }
 
@@ -20,11 +23,15 @@ public class Venta {
         return nombreCliente;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
+    public String getFecha() {
+		return fecha;
+	}
 
-    public ArrayList<LineaVenta> getLineasVenta() {
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	public ArrayList<LineaVenta> getLineasVenta() {
         return lineasVenta;
     }
 

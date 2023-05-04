@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import llibreriapkg.*;
 
 public class AltaClient extends JFrame {
 
@@ -110,6 +111,19 @@ public class AltaClient extends JFrame {
 			}
 		});
 		
+		botoEnviar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					enviar();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}				
+			}
+		});
+		
 	}
 	
 	private void tornar() {
@@ -117,6 +131,23 @@ public class AltaClient extends JFrame {
 		menuClients.setVisible(true);
 		this.dispose();
 	}
+	
+	private void enviar() throws Exception {
+		Llibreria llibreria = new Llibreria();
+		
+		Clients client = new Clients();
+		
+		client.setDni(campDNI.getText());
+		client.setNom(campNom.getText());
+		client.setCognom(campCognom.getText());
+		client.setDireccio(campDireccio.getText());
+		
+		llibreria.afegirClient(client);
+		
+		tornar();
+		
+	}
+	
 	
 	
 
