@@ -21,12 +21,17 @@ public class MenuLineaVenta extends JFrame {
 
         enviarButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String nom = nomLlibre.getText();
+                int nom = Integer.parseInt(nomLlibre.getText());
                 int quant = Integer.parseInt(quantitat.getText());
 
                 LineaVenta lv = new LineaVenta(nom, quant);
                 if (lineaVentaListener != null) {
-                    lineaVentaListener.agregarLineaVenta(lv);
+                    try {
+						lineaVentaListener.agregarLineaVenta(lv);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
                 }
 
                 dispose();

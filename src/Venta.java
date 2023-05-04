@@ -28,7 +28,7 @@ public class Venta {
         return lineasVenta;
     }
 
-    public double getTotal() {
+    public double getTotal() throws Exception {
         double total = 0;
         for (LineaVenta lineaVenta : lineasVenta) {
             total += lineaVenta.getTotal();

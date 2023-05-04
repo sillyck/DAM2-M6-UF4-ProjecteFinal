@@ -99,9 +99,9 @@ public class MenuVentes extends JFrame implements LineaVentaListener {
     }
 
     // Método para agregar una línea de venta a la lista y actualizar la tabla y el total
-    public void agregarLineaVenta(LineaVenta lineaVenta) {
+    public void agregarLineaVenta(LineaVenta lineaVenta) throws Exception {
         listaLineasVenta.add(lineaVenta);
-        modeloTablaVentas.addRow(new Object[]{lineaVenta.getNomLlibre(), lineaVenta.getQuantitat(), lineaVenta.getTotal()});
+        modeloTablaVentas.addRow(new Object[]{lineaVenta.getIsbLlibre(), lineaVenta.getQuantitat(), lineaVenta.getTotal()});
         double total = 0;
         for (LineaVenta lv : listaLineasVenta) {
             total += lv.getTotal();
@@ -111,7 +111,7 @@ public class MenuVentes extends JFrame implements LineaVentaListener {
 
     // Método del listener para agregar la línea de venta a la lista y actualizar la tabla y el total
     @Override
-    public void onLineaVentaAgregada(LineaVentaEvent evento) {
+    public void onLineaVentaAgregada(LineaVentaEvent evento) throws Exception {
         agregarLineaVenta(evento.getLineaVenta());
     }
     

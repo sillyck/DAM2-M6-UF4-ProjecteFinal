@@ -19,17 +19,21 @@ public class LineaVenta {
         return cantidad;
     }
 
-    public double getTotal() {
+    public double getTotal() throws Exception {
     	int isbn = this.getIsbLlibre();
     	
-    	Libro libro = new Libro();
+//    	Libro libro = new Libro();
     	Llibreria llibreria = new Llibreria();
     	
-    	llibreria.retornarLlibre(isbn);
+//    	libro = llibreria.retornarLlibre(isbn).getFirst();
+    	
+    	Double total = 0.0;
+    	
+//    	total = libro.getPreu() * this.getQuantitat();
     	
     	
     	
     	
-        return 0;
+        return total;
     }
 }
