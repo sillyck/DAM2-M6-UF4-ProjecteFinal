@@ -22,14 +22,14 @@ public class LineaVenta {
     public double getTotal() throws Exception {
     	int isbn = this.getIsbLlibre();
     	
-//    	Libro libro = new Libro();
+    	Libro libro = new Libro();
     	Llibreria llibreria = new Llibreria();
     	
-//    	libro = llibreria.retornarLlibre(isbn).getFirst();
+    	libro = llibreria.retornarLlibre(isbn).getFirst();
     	
     	Double total = 0.0;
     	
-//    	total = libro.getPreu() * this.getQuantitat();
+    	total = libro.getPreu() * this.getQuantitat();
     	
     	
     	
