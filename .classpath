@@ -7,6 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/hecto/eclipse-workspace/M6-UF4-ProjecteFinal/neodatis-odb-1.9.30.689.jar"/>
-	<classpathentry kind="lib" path="C:/Users/hecto/eclipse-workspace/M6-UF4-ProjecteFinal/beans/BeanLlibreria.jar"/>
+	<classpathentry kind="lib" path="C:/Users/hecto/eclipse-workspace/M6-UF4-ProjecteFinal/beans/BeanLlibreriaMod12.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
