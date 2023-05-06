@@ -23,7 +23,7 @@ public class ConsultaVentes extends JFrame{
 	private int posicioLlista = 0;
 	Llibreria llibreria = new Llibreria();
 	
-	ArrayList<Vendes> arrayLlibres = new ArrayList<>();
+	ArrayList<Vendes> arrayVendes = new ArrayList<>();
 	Objects<Vendes> vendesObject;
 	
 	
@@ -58,6 +58,7 @@ public class ConsultaVentes extends JFrame{
 		
 		try {
 			afegirLlibresLlista();
+			afegirLineaATaula();
 		} catch (Exception e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -93,7 +94,7 @@ public class ConsultaVentes extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("botoSeguent--posicioLlista: " + posicioLlista);
 				
-				if ((posicioLlista + 1) < arrayLlibres.size()) {
+				if ((posicioLlista + 1) < arrayVendes.size()) {
 				posicioLlista++;
 				try {
 					afegirLineaATaula();
@@ -102,7 +103,7 @@ public class ConsultaVentes extends JFrame{
 					e1.printStackTrace();
 				}
 				}else {
-					System.out.println("El llibre que es mostra es el primer");
+					System.out.println("La venta que es mostra es l'ultima");
 				}
 			}
 		});
@@ -122,7 +123,7 @@ public class ConsultaVentes extends JFrame{
 						e1.printStackTrace();
 					}
 				}else {
-					System.out.println("El llibre que es mostra es l'ultim");
+					System.out.println("La venta que es mostra es la primera");
 				}
 			}
 		});
@@ -133,7 +134,7 @@ public class ConsultaVentes extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("botoUltim--posicioLlista: " + posicioLlista);
 
-				posicioLlista = arrayLlibres.size();
+				posicioLlista = (arrayVendes.size() - 1);
 				try {
 					afegirLineaATaula();
 				} catch (Exception e1) {
@@ -155,11 +156,10 @@ public class ConsultaVentes extends JFrame{
 		
 		System.out.println("afegirLineaATaula--posicioLlista: " + posicioLlista);
 		
-		taulaConsulta.addRow(new Object[] { "ISBN: ", arrayLlibres.get(posicioLlista).getDni() });
-		taulaConsulta.addRow(new Object[] { "Titol: ", arrayLlibres.get(posicioLlista).getFecha() });
-		taulaConsulta.addRow(new Object[] { "Autor: ", arrayLlibres.get(posicioLlista).getId() });
-		taulaConsulta.addRow(new Object[] { "Stock: ", arrayLlibres.get(posicioLlista).getLinea() });
-		taulaConsulta.addRow(new Object[] { "Any publicació: ", arrayLlibres.get(posicioLlista).getTotal() });
+		taulaConsulta.addRow(new Object[] { "DNI: ", arrayVendes.get(posicioLlista).getDni() });
+		taulaConsulta.addRow(new Object[] { "Data: ", arrayVendes.get(posicioLlista).getFecha() });
+		taulaConsulta.addRow(new Object[] { "Llibres c: ", arrayVendes.get(posicioLlista).getLinea() });
+		taulaConsulta.addRow(new Object[] { "Any publicació: ", arrayVendes.get(posicioLlista).getTotal() });
 
 	}
 	
@@ -177,11 +177,11 @@ public class ConsultaVentes extends JFrame{
 
 		while (vendesObject.hasNext()) {
 			vendes = vendesObject.next();
-			arrayLlibres.add(vendes);
+			arrayVendes.add(vendes);
 		}
 
-		for (int i = 0; i < arrayLlibres.size(); i++) {
-			System.out.println(arrayLlibres.get(i).getDni());
+		for (int i = 0; i < arrayVendes.size(); i++) {
+			System.out.println(arrayVendes.get(i).getDni());
 
 		}
 

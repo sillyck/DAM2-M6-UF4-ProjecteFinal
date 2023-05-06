@@ -10,12 +10,11 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import llibreriapkg.*;
 
-
 public class BaixaLlibre extends JFrame {
 
 	private JLabel etiquetaISBN;
 	private JTextField campISBN;
-	private JButton botoEnviar; 
+	private JButton botoEnviar;
 	private JButton botoTornar;
 
 	public BaixaLlibre() {
@@ -25,7 +24,7 @@ public class BaixaLlibre extends JFrame {
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new GridBagLayout());
-		
+
 		etiquetaISBN = new JLabel("ISBN:");
 		GridBagConstraints constraintsISBN = new GridBagConstraints();
 		constraintsISBN.gridx = 0;
@@ -57,39 +56,49 @@ public class BaixaLlibre extends JFrame {
 		setVisible(true);
 
 		botoTornar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				tornar();
 			}
 		});
-		
+
 		botoEnviar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
 					enviar();
 				} catch (Exception e1) {
 					e1.printStackTrace();
-				}				
+				}
 			}
 		});
-		
+
 	}
-	
+
 	private void tornar() {
 		MenuClients menuClients = new MenuClients();
 		menuClients.setVisible(true);
 		this.dispose();
 	}
-	
+
 	private void enviar() throws NumberFormatException, Exception {
 		Llibreria llibreria = new Llibreria();
-		
-		llibreria.eliminarLlibre(Integer.parseInt(campISBN.getText()));
-		tornar();
+		if (!campISBN.getText().isEmpty()) {
+			if (!llibreria.retornarLlibre(Integer.parseInt(campISBN.getText())).isEmpty()) {
+				llibreria.eliminarLlibre(Integer.parseInt(campISBN.getText()));
+				tornar();
+			} else {
+				PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+						"No s'ha pogut trobar el llibre indicat");
+				popupOmplirCamps.setVisible(true);
+			}
+		}else {
+			PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+					"Has d'indicar el ISBN del llibre que vols donar de baixa");
+			popupOmplirCamps.setVisible(true);
+		}
 	}
-	
 
 }

@@ -55,6 +55,7 @@ public class ConsultaLlibres extends JFrame {
 
 		try {
 			afegirLlibresLlista();
+			afegirLineaATaula();
 		} catch (Exception e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -97,7 +98,7 @@ public class ConsultaLlibres extends JFrame {
 					e1.printStackTrace();
 				}
 				}else {
-					System.out.println("El llibre que es mostra es el primer");
+					System.out.println("El llibre que es mostra es l'ultim");
 				}
 			}
 		});
@@ -117,7 +118,7 @@ public class ConsultaLlibres extends JFrame {
 						e1.printStackTrace();
 					}
 				}else {
-					System.out.println("El llibre que es mostra es l'ultim");
+					System.out.println("El llibre que es mostra es el primer");
 				}
 			}
 		});
@@ -128,7 +129,7 @@ public class ConsultaLlibres extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("botoUltim--posicioLlista: " + posicioLlista);
 
-				posicioLlista = arrayLlibres.size();
+				posicioLlista = (arrayLlibres.size() - 1);
 				try {
 					afegirLineaATaula();
 				} catch (Exception e1) {

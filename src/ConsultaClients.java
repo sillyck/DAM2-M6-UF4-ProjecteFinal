@@ -54,6 +54,7 @@ public class ConsultaClients extends JFrame {
 		add(scroll, "Center");
 		try {
 			afegirClientsLlista();
+			afegirLineaATaula();
 		} catch (Exception e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -93,7 +94,7 @@ public class ConsultaClients extends JFrame {
 					e1.printStackTrace();
 				}
 				}else {
-					System.out.println("El client que es mostra es el primer");
+					System.out.println("El client que es mostra es l'ultim");
 				}
 			}
 		});
@@ -111,7 +112,7 @@ public class ConsultaClients extends JFrame {
 						e1.printStackTrace();
 					}
 				}else {
-					System.out.println("El client que es mostra es l'ultim");
+					System.out.println("El client que es mostra es el primer");
 				}
 			}
 		});
@@ -120,7 +121,7 @@ public class ConsultaClients extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				posicioLlista = arrayClients.size();
+				posicioLlista = (arrayClients.size() - 1);
 				try {
 					afegirLineaATaula();
 				} catch (Exception e1) {

@@ -245,11 +245,26 @@ public class ModificarLlibre extends JFrame {
 	
 	private void enviar() throws NumberFormatException, Exception {
 		Llibreria llibreria = new Llibreria();
+		if(!campAutor.getText().isEmpty() && !campDataAlta.getText().isEmpty()
+				&& !campDataPublicacio.getText().isEmpty() && !campEditorial.getText().isEmpty()
+				&& !campISBN.getText().isEmpty() && !campPVP.getText().isEmpty()
+				&& !campStock.getText().isEmpty() && !campTematica.getText().isEmpty()
+				&& !campTitol.getText().isEmpty() && !campUbicacio.getText().isEmpty()) {
+			if(llibreria.retornarLlibre(Integer.parseInt(campISBNAntic.getText())).isEmpty()) {
 		llibreria.actualitzarLlibre(Integer.parseInt(campISBNAntic.getText()), Integer.parseInt(campISBN.getText()), Integer.parseInt(campStock.getText()),
 				Integer.parseInt(campDataPublicacio.getText()), campDataAlta.getText(), campTitol.getText(), campAutor.getText(), campEditorial.getText(),
 				campTematica.getText(), campUbicacio.getText(), Double.parseDouble(campPVP.getText()));
 		
 		tornar();
+			}else {
+				PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+						"No s'ha pogut trobar el llibre indicat");
+				popupOmplirCamps.setVisible(true);
+			}
+		}else {
+			PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps("S'han d'omplir tots els camps per modificar el llibre");
+			popupOmplirCamps.setVisible(true);
+		}
 		
 	}
 	
