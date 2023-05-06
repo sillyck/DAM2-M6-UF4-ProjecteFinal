@@ -207,10 +207,10 @@ public class AltaLlibre extends JFrame {
 			}
 		});
 		botoEnviar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				enviar();				
+				enviar();
 			}
 		});
 
@@ -226,22 +226,40 @@ public class AltaLlibre extends JFrame {
 		Llibreria llibreria = new Llibreria();
 		Libro libro = new Libro();
 		try {
-			libro.setAny(Integer.parseInt(campDataPublicacio.getText()));
-			libro.setAutor(campAutor.getText());
-			libro.setDataAlta(campDataAlta.getText());
-			libro.setEditorial(campEditorial.getText());
-			libro.setIsbn(Integer.parseInt(campISBN.getText()));
-			libro.setPreu(Double.parseDouble(campPVP.getText()));
-			libro.setStock(Integer.parseInt(campStock.getText()));
-			libro.setTematica(campTematica.getText());
-			libro.setTitol(campTitol.getText());
-			libro.setUbicacio(campUbicacio.getText());
-			llibreria.afegirLlibre(libro);
-			tornar();
-			
+			if (!campAutor.getText().isEmpty() && !campDataAlta.getText().isEmpty()
+					&& !campDataPublicacio.getText().isEmpty() && !campEditorial.getText().isEmpty()
+					&& !campISBN.getText().isEmpty() && !campPVP.getText().isEmpty()
+					&& !campStock.getText().isEmpty() && !campTematica.getText().isEmpty()
+					&& !campTitol.getText().isEmpty() && !campUbicacio.getText().isEmpty()) {
+				if (!llibreria.retornarLlibre(Integer.parseInt(campISBN.getText())).isEmpty()) {
+					libro.setAny(Integer.parseInt(campDataPublicacio.getText()));
+					libro.setAutor(campAutor.getText());
+					libro.setDataAlta(campDataAlta.getText());
+					libro.setEditorial(campEditorial.getText());
+					libro.setIsbn(Integer.parseInt(campISBN.getText()));
+					libro.setPreu(Double.parseDouble(campPVP.getText()));
+					libro.setStock(Integer.parseInt(campStock.getText()));
+					libro.setTematica(campTematica.getText());
+					libro.setTitol(campTitol.getText());
+					libro.setUbicacio(campUbicacio.getText());
+					llibreria.afegirLlibre(libro);
+					tornar();
+				} else {
+					PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+							"El llibre indicat ja esta donat d'alta");
+					popupOmplirCamps.setVisible(true);
+				}
+			}else {
+				PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+						"S'han d'omplir tots els camps per donar l'alta");
+				popupOmplirCamps.setVisible(true);
+			}
+
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+//			PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+//					"El llibre indicat ja esta donat d'alta");
+//			popupOmplirCamps.setVisible(true);
 		}
 
 	}

@@ -84,8 +84,20 @@ public class BaixaClient extends JFrame {
 		Llibreria llibreria = new Llibreria();
 
 		try {
-			llibreria.eliminarClient(campDNI.getText());
-			tornar();
+			if (!campDNI.getText().isEmpty()) {
+				if (!llibreria.retornarClient(campDNI.getText()).isEmpty()) {
+					llibreria.eliminarClient(campDNI.getText());
+					tornar();
+				} else {
+					PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+							"No s'ha pogut trobar el client");
+					popupOmplirCamps.setVisible(true);
+				}
+			}else {
+				PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+						"Has d'indicar el DNI del client que vols donar de baixa");
+				popupOmplirCamps.setVisible(true);
+			}
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

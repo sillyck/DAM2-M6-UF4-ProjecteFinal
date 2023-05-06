@@ -30,7 +30,7 @@ public class AltaClient extends JFrame {
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new GridBagLayout());
-		
+
 		etiquetaDNI = new JLabel("DNI:");
 		GridBagConstraints constraintsDni = new GridBagConstraints();
 		constraintsDni.gridx = 0;
@@ -72,7 +72,7 @@ public class AltaClient extends JFrame {
 		constraintsCampCognom.gridy = 2;
 		constraintsCampCognom.insets = new Insets(10, 10, 10, 10);
 		add(campCognom, constraintsCampCognom);
-		
+
 		etiquetaDireccio = new JLabel("Direcció:");
 		GridBagConstraints constraintsDireccio = new GridBagConstraints();
 		constraintsDireccio.gridx = 0;
@@ -104,15 +104,15 @@ public class AltaClient extends JFrame {
 		setVisible(true);
 
 		botoTornar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				tornar();
 			}
 		});
-		
+
 		botoEnviar.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -120,35 +120,46 @@ public class AltaClient extends JFrame {
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				}				
+				}
 			}
 		});
-		
+
 	}
-	
+
 	private void tornar() {
 		MenuClients menuClients = new MenuClients();
 		menuClients.setVisible(true);
 		this.dispose();
 	}
-	
+
 	private void enviar() throws Exception {
 		Llibreria llibreria = new Llibreria();
-		
+
 		Clients client = new Clients();
 		
-		client.setDni(campDNI.getText());
-		client.setNom(campNom.getText());
-		client.setCognom(campCognom.getText());
-		client.setDireccio(campDireccio.getText());
-		
-		llibreria.afegirClient(client);
-		
-		tornar();
-		
+		if (!campDNI.getText().isEmpty() && !campNom.getText().isEmpty() && !campCognom.getText().isEmpty()
+				&& !campDireccio.getText().isEmpty()) {
+			if (llibreria.retornarClient(campDNI.getText()).isEmpty()) {
+				client.setDni(campDNI.getText());
+				client.setNom(campNom.getText());
+				client.setCognom(campCognom.getText());
+				client.setDireccio(campDireccio.getText());
+
+				llibreria.afegirClient(client);
+
+				tornar();
+			} else {
+				PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+						"Aquest client ja esta donat d'alta");
+				popupOmplirCamps.setVisible(true);
+			}
+		}else {
+			
+			PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+					"S'han d'omplir tots els camps per donar l'alta");
+			popupOmplirCamps.setVisible(true);
+		}
+
 	}
-	
-	
-	
 
 }

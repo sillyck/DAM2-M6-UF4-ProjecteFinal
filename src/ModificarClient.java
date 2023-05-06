@@ -147,9 +147,22 @@ enviar();
 		Llibreria llibreria = new Llibreria();
 		
 		try {
+			if(!campDNIAntic.getText().isEmpty() && !campDNI.getText().isEmpty()
+					&& !campNom.getText().isEmpty() && !campCognom.getText().isEmpty()
+					&& !campDireccio.getText().isEmpty()) {
+				if (llibreria.retornarClient(campDNI.getText()).isEmpty()) {
 			llibreria.actualitzarClient(campDNIAntic.getText(), campDNI.getText(), campNom.getText()
 					, campCognom.getText(), campDireccio.getText());
 			tornar();
+				}else {
+					PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+							"No s'ha pogut trobar el client");
+					popupOmplirCamps.setVisible(true);
+				}
+			}else {
+				PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps("S'han d'omplir tots els camps per modificar el client");
+				popupOmplirCamps.setVisible(true);
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
