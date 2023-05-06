@@ -78,8 +78,8 @@ public class BaixaLlibre extends JFrame {
 	}
 
 	private void tornar() {
-		MenuClients menuClients = new MenuClients();
-		menuClients.setVisible(true);
+		MenuLlibres menuLlibres = new MenuLlibres();
+		menuLlibres.setVisible(true);
 		this.dispose();
 	}
 

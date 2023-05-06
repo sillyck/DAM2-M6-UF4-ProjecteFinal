@@ -19,7 +19,7 @@ public class MainPracticaFinalM6 {
 //		neodatis.afegirLlibre(libro3);
 		
 //		neodatis.afegirClient(client1);
-//		neodatis.afegirClient(client2);
+//		neodatis.afegirClient(client2);45652135D	Hector	Vallve	Rambla de la pau
 //		neodatis.afegirClient(client3);
 		
 

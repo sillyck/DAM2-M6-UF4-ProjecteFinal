@@ -7,7 +7,7 @@ public class PopupOmplirCamps extends JFrame {
         setTitle("Popup");
         JLabel label = new JLabel(mensaje);
         add(label);
-        setSize(300, 100);
+        setSize(400, 100);
         setLocationRelativeTo(null);
     }
 }

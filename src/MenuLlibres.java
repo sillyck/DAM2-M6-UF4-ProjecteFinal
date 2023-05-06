@@ -48,6 +48,10 @@ public class MenuLlibres extends JFrame {
 		cp.add(baixa, posicioBotoBaixa);
 		cp.add(modificar, posicioBotoModificar);
 		cp.add(enrere, posicioBotoEnrere);
+		enrere.addActionListener(e -> {
+			enrere();
+			dispose(); // Cerrar la ventana sin enviar la venta
+		});
 
 		alta.addActionListener(new ActionListener() {
 
@@ -90,6 +94,12 @@ public class MenuLlibres extends JFrame {
 	private void modificacio() {
 		ModificarLlibre modificar = new ModificarLlibre();
 		modificar.setVisible(true);
+		this.dispose();
+	}
+	
+	private void enrere() {
+		MenuInicial inici = new MenuInicial();
+		inici.setVisible(true);
 		this.dispose();
 	}
 
