@@ -94,6 +94,8 @@ public class MenuVentes extends JFrame implements LineaVentaListener {
 						Vendes venda = new Vendes(fechaActualString, campoCliente.getText().toString(), arrayLinea,
 								total);
 						llibreria.afegirVenta(venda);
+						MenuInicial inici = new MenuInicial();
+						inici.setVisible(true);
 						dispose();
 					} else {
 						PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps("El client introduit no existeix");
@@ -105,8 +107,10 @@ public class MenuVentes extends JFrame implements LineaVentaListener {
 					popupOmplirCamps.setVisible(true);
 				}
 			} catch (Exception e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+						"Error en la venta " + e1.getMessage());
+				popupOmplirCamps.setVisible(true);
+				
 			}
 
 			// Cerrar la ventana después de enviar la venta

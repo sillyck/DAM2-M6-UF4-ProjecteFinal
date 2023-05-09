@@ -71,7 +71,6 @@ public class ConsultaLlibres extends JFrame {
 		botoInici.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("botoInici--posicioLlista: " + posicioLlista);
 
 				posicioLlista = 0;
 				try {
@@ -87,7 +86,6 @@ public class ConsultaLlibres extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("botoSeguent--posicioLlista: " + posicioLlista);
 				
 				if ((posicioLlista + 1) < arrayLlibres.size()) {
 				posicioLlista++;
@@ -98,7 +96,9 @@ public class ConsultaLlibres extends JFrame {
 					e1.printStackTrace();
 				}
 				}else {
-					System.out.println("El llibre que es mostra es l'ultim");
+					PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+							"El llibre que es mostra es l'ultim");
+					popupOmplirCamps.setVisible(true);
 				}
 			}
 		});
@@ -107,7 +107,6 @@ public class ConsultaLlibres extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("botoAnterior--posicioLlista: " + posicioLlista);
 				
 				if ((posicioLlista - 1) > 0) {
 					posicioLlista--;
@@ -118,7 +117,9 @@ public class ConsultaLlibres extends JFrame {
 						e1.printStackTrace();
 					}
 				}else {
-					System.out.println("El llibre que es mostra es el primer");
+					PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+							"El llibre que es mostra es el primer");
+					popupOmplirCamps.setVisible(true);
 				}
 			}
 		});
@@ -127,7 +128,6 @@ public class ConsultaLlibres extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("botoUltim--posicioLlista: " + posicioLlista);
 
 				posicioLlista = (arrayLlibres.size() - 1);
 				try {
@@ -149,7 +149,6 @@ public class ConsultaLlibres extends JFrame {
 
 		taulaConsulta.setRowCount(0);
 		
-		System.out.println("afegirLineaATaula--posicioLlista: " + posicioLlista);
 		
 		taulaConsulta.addRow(new Object[] { "ISBN: ", arrayLlibres.get(posicioLlista).getIsbn() });
 		taulaConsulta.addRow(new Object[] { "Titol: ", arrayLlibres.get(posicioLlista).getTitol() });
@@ -178,11 +177,6 @@ public class ConsultaLlibres extends JFrame {
 		while (libroObject.hasNext()) {
 			libro = libroObject.next();
 			arrayLlibres.add(libro);
-		}
-
-		for (int i = 0; i < arrayLlibres.size(); i++) {
-			System.out.println(arrayLlibres.get(i).getIsbn());
-
 		}
 
 	}

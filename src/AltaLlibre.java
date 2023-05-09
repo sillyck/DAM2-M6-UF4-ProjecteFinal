@@ -231,7 +231,7 @@ public class AltaLlibre extends JFrame {
 					&& !campISBN.getText().isEmpty() && !campPVP.getText().isEmpty()
 					&& !campStock.getText().isEmpty() && !campTematica.getText().isEmpty()
 					&& !campTitol.getText().isEmpty() && !campUbicacio.getText().isEmpty()) {
-				if (!llibreria.retornarLlibre(Integer.parseInt(campISBN.getText())).isEmpty()) {
+				if (llibreria.retornarLlibre(Integer.parseInt(campISBN.getText())).isEmpty()) {
 					libro.setAny(Integer.parseInt(campDataPublicacio.getText()));
 					libro.setAutor(campAutor.getText());
 					libro.setDataAlta(campDataAlta.getText());
@@ -258,7 +258,7 @@ public class AltaLlibre extends JFrame {
 		} catch (Exception e) {
 			e.printStackTrace();
 //			PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
-//					"El llibre indicat ja esta donat d'alta");
+//					"El llibre indicat ja esta donat d'alta");111111987	4	1987	Harry Potter	Hector vallve	Penguin	Fantasia	Alcover	20/04/2023	5.3
 //			popupOmplirCamps.setVisible(true);
 		}
 

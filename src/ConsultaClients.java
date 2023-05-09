@@ -94,7 +94,9 @@ public class ConsultaClients extends JFrame {
 					e1.printStackTrace();
 				}
 				}else {
-					System.out.println("El client que es mostra es l'ultim");
+					PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+							"El client que es mostra es l'ultim");
+					popupOmplirCamps.setVisible(true);
 				}
 			}
 		});
@@ -112,7 +114,9 @@ public class ConsultaClients extends JFrame {
 						e1.printStackTrace();
 					}
 				}else {
-					System.out.println("El client que es mostra es el primer");
+					PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+							"El client que es mostra es el primer");
+					popupOmplirCamps.setVisible(true);
 				}
 			}
 		});
@@ -164,11 +168,6 @@ public class ConsultaClients extends JFrame {
 		while (clientsObject.hasNext()) {
 			clients = clientsObject.next();
 			arrayClients.add(clients);
-		}
-
-		for (int i = 0; i < arrayClients.size(); i++) {
-			System.out.println(arrayClients.get(i).getDni());
-
 		}
 
 	}

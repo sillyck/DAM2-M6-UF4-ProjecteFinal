@@ -103,7 +103,9 @@ public class ConsultaVentes extends JFrame{
 					e1.printStackTrace();
 				}
 				}else {
-					System.out.println("La venta que es mostra es l'ultima");
+					PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+							"La venta que es mostra es l'ultima");
+					popupOmplirCamps.setVisible(true);
 				}
 			}
 		});
@@ -123,7 +125,9 @@ public class ConsultaVentes extends JFrame{
 						e1.printStackTrace();
 					}
 				}else {
-					System.out.println("La venta que es mostra es la primera");
+					PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
+							"La venta que es mostra es la primera");
+					popupOmplirCamps.setVisible(true);
 				}
 			}
 		});
@@ -178,11 +182,6 @@ public class ConsultaVentes extends JFrame{
 		while (vendesObject.hasNext()) {
 			vendes = vendesObject.next();
 			arrayVendes.add(vendes);
-		}
-
-		for (int i = 0; i < arrayVendes.size(); i++) {
-			System.out.println(arrayVendes.get(i).getDni());
-
 		}
 
 	}
