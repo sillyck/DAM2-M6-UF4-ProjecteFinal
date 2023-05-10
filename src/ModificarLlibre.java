@@ -250,8 +250,8 @@ public class ModificarLlibre extends JFrame {
 				&& !campISBN.getText().isEmpty() && !campPVP.getText().isEmpty()
 				&& !campStock.getText().isEmpty() && !campTematica.getText().isEmpty()
 				&& !campTitol.getText().isEmpty() && !campUbicacio.getText().isEmpty()) {
-			if(!llibreria.retornarLlibre(Integer.parseInt(campISBNAntic.getText())).isEmpty()) {
-		llibreria.actualitzarLlibre(Integer.parseInt(campISBNAntic.getText()), Integer.parseInt(campISBN.getText()), Integer.parseInt(campStock.getText()),
+			if(!llibreria.retornarLlibre(Long.parseLong(campISBNAntic.getText())).isEmpty()) {
+		llibreria.actualitzarLlibre(Long.parseLong(campISBNAntic.getText()), Long.parseLong(campISBN.getText()), Integer.parseInt(campStock.getText()),
 				Integer.parseInt(campDataPublicacio.getText()), campDataAlta.getText(), campTitol.getText(), campAutor.getText(), campEditorial.getText(),
 				campTematica.getText(), campUbicacio.getText(), Double.parseDouble(campPVP.getText()));
 		

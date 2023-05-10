@@ -21,7 +21,7 @@ public class MenuLineaVenta extends JFrame {
 
         enviarButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                int nom = Integer.parseInt(nomLlibre.getText());
+            	Long nom = Long.parseLong(nomLlibre.getText());
                 int quant = Integer.parseInt(quantitat.getText());
 
                 LineaVenta lv = new LineaVenta(nom, quant);

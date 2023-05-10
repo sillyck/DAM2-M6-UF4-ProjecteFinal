@@ -76,7 +76,6 @@ public class ConsultaVentes extends JFrame{
 		botoInici.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("botoInici--posicioLlista: " + posicioLlista);
 
 				posicioLlista = 0;
 				try {
@@ -92,7 +91,6 @@ public class ConsultaVentes extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("botoSeguent--posicioLlista: " + posicioLlista);
 				
 				if ((posicioLlista + 1) < arrayVendes.size()) {
 				posicioLlista++;
@@ -114,7 +112,6 @@ public class ConsultaVentes extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("botoAnterior--posicioLlista: " + posicioLlista);
 				
 				if ((posicioLlista - 1) > 0) {
 					posicioLlista--;
@@ -136,7 +133,6 @@ public class ConsultaVentes extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("botoUltim--posicioLlista: " + posicioLlista);
 
 				posicioLlista = (arrayVendes.size() - 1);
 				try {
@@ -158,11 +154,10 @@ public class ConsultaVentes extends JFrame{
 
 		taulaConsulta.setRowCount(0);
 		
-		System.out.println("afegirLineaATaula--posicioLlista: " + posicioLlista);
 		
 		taulaConsulta.addRow(new Object[] { "DNI: ", arrayVendes.get(posicioLlista).getDni() });
 		taulaConsulta.addRow(new Object[] { "Data: ", arrayVendes.get(posicioLlista).getFecha() });
-		taulaConsulta.addRow(new Object[] { "Llibres c: ", arrayVendes.get(posicioLlista).getLinea() });
+		taulaConsulta.addRow(new Object[] { "Llibres comprats: ", arrayVendes.get(posicioLlista).getLinea() });
 		taulaConsulta.addRow(new Object[] { "Any publicació: ", arrayVendes.get(posicioLlista).getTotal() });
 
 	}

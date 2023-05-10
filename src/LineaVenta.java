@@ -2,17 +2,17 @@ import llibreriapkg.*;
 import llibreriapkg.Libro;
 
 public class LineaVenta {
-    private int isbLlibre;
+    private Long isbLlibre;
     private int cantidad;
     
     
 
-    public LineaVenta(int nombreLibro, int cantidad) {
+    public LineaVenta(Long nombreLibro, int cantidad) {
         this.isbLlibre = nombreLibro;
         this.cantidad = cantidad;
     }
 
-    public int getIsbLlibre() {
+    public Long getIsbLlibre() {
 		return isbLlibre;
 	}
 
@@ -21,7 +21,7 @@ public class LineaVenta {
     }
 
     public double getTotal() throws Exception {
-    	int isbn = this.getIsbLlibre();
+    	Long isbn = this.getIsbLlibre();
     	
     	Libro libro = new Libro();
     	Llibreria llibreria = new Llibreria();

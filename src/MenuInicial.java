@@ -126,6 +126,7 @@ public class MenuInicial extends JFrame{
 	
 	public void sortir() {
 		this.dispose();
+		
 	}
 	
 	

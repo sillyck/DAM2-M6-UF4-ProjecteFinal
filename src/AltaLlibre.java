@@ -231,12 +231,12 @@ public class AltaLlibre extends JFrame {
 					&& !campISBN.getText().isEmpty() && !campPVP.getText().isEmpty()
 					&& !campStock.getText().isEmpty() && !campTematica.getText().isEmpty()
 					&& !campTitol.getText().isEmpty() && !campUbicacio.getText().isEmpty()) {
-				if (llibreria.retornarLlibre(Integer.parseInt(campISBN.getText())).isEmpty()) {
+				if (llibreria.retornarLlibre(Long.parseLong(campISBN.getText())).isEmpty()) {
 					libro.setAny(Integer.parseInt(campDataPublicacio.getText()));
 					libro.setAutor(campAutor.getText());
 					libro.setDataAlta(campDataAlta.getText());
 					libro.setEditorial(campEditorial.getText());
-					libro.setIsbn(Integer.parseInt(campISBN.getText()));
+					libro.setIsbn(Long.parseLong(campISBN.getText()));
 					libro.setPreu(Double.parseDouble(campPVP.getText()));
 					libro.setStock(Integer.parseInt(campStock.getText()));
 					libro.setTematica(campTematica.getText());

@@ -86,8 +86,8 @@ public class BaixaLlibre extends JFrame {
 	private void enviar() throws NumberFormatException, Exception {
 		Llibreria llibreria = new Llibreria();
 		if (!campISBN.getText().isEmpty()) {
-			if (!llibreria.retornarLlibre(Integer.parseInt(campISBN.getText())).isEmpty()) {
-				llibreria.eliminarLlibre(Integer.parseInt(campISBN.getText()));
+			if (!llibreria.retornarLlibre(Long.parseLong(campISBN.getText())).isEmpty()) {
+				llibreria.eliminarLlibre(Long.parseLong(campISBN.getText()));
 				tornar();
 			} else {
 				PopupOmplirCamps popupOmplirCamps = new PopupOmplirCamps(
